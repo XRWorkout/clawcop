@@ -1,0 +1,527 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ClawGuard — Security for OpenClaw</title>
+  <meta name="description"
+    content="Scan your OpenClaw skills for malware. Monitor your instance 24/7. Sleep at night. The security layer OpenClaw doesn't have — yet.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600;700&family=DM+Sans:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Instrument+Serif:ital@0;1&display=swap"
+    rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+
+  <!-- ════════════════════════════════════════════════════════════
+     NAV
+     ════════════════════════════════════════════════════════════ -->
+  <nav>
+    <div class="nav-inner">
+      <a href="#" class="nav-logo">
+        <span class="claw-icon">🦞</span>
+        <span>ClawGuard</span>
+      </a>
+      <div class="nav-links">
+        <a href="#problem">Threats</a>
+        <a href="#how">How It Works</a>
+        <a href="#pricing">Pricing</a>
+        <a href="#faq">FAQ</a>
+        <a href="#scan" class="nav-cta">Free Scan →</a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- ════════════════════════════════════════════════════════════
+     HERO
+     ════════════════════════════════════════════════════════════ -->
+  <header class="hero">
+    <div class="hero-badge">
+      <span class="badge badge--red">⚠ 341 malicious skills found on ClawHub this month</span>
+    </div>
+
+    <h1>Your OpenClaw is <em>wide open.</em></h1>
+
+    <p class="hero-sub">
+      Scan your skills for malware. Monitor your instance 24/7. Harden your config in one click. The security layer
+      OpenClaw doesn't have&thinsp;—&thinsp;yet.
+    </p>
+
+    <div class="hero-actions">
+      <a href="#scan" class="btn-primary">Scan Free Now</a>
+      <a href="#pricing" class="btn-secondary">View Plans</a>
+    </div>
+
+    <div class="hero-terminal" id="scan">
+      <div class="terminal-bar">
+        <div class="terminal-dot terminal-dot--red"></div>
+        <div class="terminal-dot terminal-dot--yellow"></div>
+        <div class="terminal-dot terminal-dot--green"></div>
+        <span>Terminal — clawguard scan</span>
+      </div>
+      <div class="terminal-body">
+        <span class="terminal-line"><span class="t-prompt">$</span> <span class="t-cmd">npx clawguard scan</span> <span
+            class="t-flag">--instance ~/. openclaw</span></span>
+        <span class="terminal-line"><span class="t-comment"># Scanning 47 installed skills...</span></span>
+        <span class="terminal-line"><span class="t-comment"># Checking config, ports, credentials,
+            permissions...</span></span>
+        <span class="terminal-line">&nbsp;</span>
+        <span class="terminal-line"><span class="t-danger">✗ CRITICAL</span> rss-reader — data exfiltration to external
+          server</span>
+        <span class="terminal-line"><span class="t-danger">✗ CRITICAL</span> smart-mailer — prompt injection bypasses
+          safety</span>
+        <span class="terminal-line"><span class="t-danger">✗ HIGH</span> sandbox mode disabled — shell runs on
+          host</span>
+        <span class="terminal-line"><span class="t-danger">✗ HIGH</span> 3 API keys in plaintext .env</span>
+        <span class="terminal-line"><span class="t-flag">⚠ MEDIUM</span> DM policy set to "open" — anyone can
+          message</span>
+        <span class="terminal-line"><span class="t-safe">✓ PASS</span> gateway not exposed to public internet</span>
+        <span class="terminal-line">&nbsp;</span>
+        <span class="terminal-line"><span class="t-danger">Found 2 critical, 2 high, 1 medium issue.</span></span>
+        <span class="terminal-line"><span class="t-url">→ Fix all automatically with ClawGuard Shield:
+            clawguard.dev/fix</span></span>
+        <span class="terminal-line"><span class="cursor-blink">█</span></span>
+      </div>
+    </div>
+  </header>
+
+  <!-- ════════════════════════════════════════════════════════════
+     THREAT STATS
+     ════════════════════════════════════════════════════════════ -->
+  <div class="threat-strip">
+    <div class="container">
+      <div class="threat-stat">
+        <div class="number">341</div>
+        <div class="label">Malicious skills on ClawHub</div>
+        <div class="source">Koi Security, Feb 2026</div>
+      </div>
+      <div class="threat-stat">
+        <div class="number">42,665</div>
+        <div class="label">Exposed instances on internet</div>
+        <div class="source">Shodan / Dvuln scan</div>
+      </div>
+      <div class="threat-stat">
+        <div class="number">93.4%</div>
+        <div class="label">Vulnerable to auth bypass</div>
+        <div class="source">AdwaitX Research, 2026</div>
+      </div>
+      <div class="threat-stat">
+        <div class="number">26%</div>
+        <div class="label">Of all skills contain vulnerabilities</div>
+        <div class="source">Cisco AI Defense</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ════════════════════════════════════════════════════════════
+     THE PROBLEM
+     ════════════════════════════════════════════════════════════ -->
+  <section class="problem" id="problem">
+    <div class="container">
+      <div class="section-label">The threat is real</div>
+      <h2 class="section-title">You gave an AI agent the keys<br>to your entire digital life.</h2>
+      <p class="section-sub">
+        Your email. Your files. Your API keys. Your shell. OpenClaw is incredible — but without security, you're running
+        the most powerful attack surface ever put on a consumer machine.
+      </p>
+
+      <div class="problem-grid">
+        <div class="problem-card">
+          <div class="icon">🧬</div>
+          <h3>Skill Supply Chain Attacks</h3>
+          <p>ClawHub has no vetting process. The #1 ranked skill was literal malware — silently exfiltrating your data
+            while you slept. 341 malicious packages found in a single week.</p>
+          <div class="stat">ClawHavoc campaign deployed infostealers, keyloggers, and backdoors across hundreds of
+            skills — Koi Security</div>
+        </div>
+
+        <div class="problem-card">
+          <div class="icon">💉</div>
+          <h3>Prompt Injection via Chat</h3>
+          <p>A single crafted message in a WhatsApp group, a Discord DM, or a forwarded email can hijack your agent.
+            It'll dump your SSH keys and you won't even see it happen.</p>
+          <div class="stat">A tester sent one email — the agent leaked private keys from the machine without any
+            confirmation — Kaspersky</div>
+        </div>
+
+        <div class="problem-card">
+          <div class="icon">🔓</div>
+          <h3>Credentials in Plaintext</h3>
+          <p>API keys, session tokens, OAuth credentials — stored in Markdown files and .env files in the agent's
+            reachable filesystem. 1,800+ instances actively leaking credentials on the open internet.</p>
+          <div class="stat">CVE-2026-25253: Critical RCE (CVSS 8.8) — steal auth tokens via a single malicious link
+          </div>
+        </div>
+
+        <div class="problem-card">
+          <div class="icon">🧠</div>
+          <h3>Memory Poisoning</h3>
+          <p>OpenClaw stores web scrapes, messages, and skill outputs in the same memory — without trust levels. An
+            attacker who poisons your agent's memory controls its behavior for weeks.</p>
+          <div class="stat">Modifiable memories and system prompts persist into future chat sessions — HiddenLayer</div>
+        </div>
+
+        <div class="problem-card">
+          <div class="icon">🌐</div>
+          <h3>Agent-to-Agent Contagion</h3>
+          <p>Moltbook — the AI social network — has 37,000 agents processing untrusted content from other agents. Prompt
+            injection payloads spread virally between instances.</p>
+          <div class="stat">Moltbook created a laboratory where agents constantly process untrusted data — Zenity Labs
+          </div>
+        </div>
+
+        <div class="problem-card">
+          <div class="icon">👻</div>
+          <h3>No Approval Required</h3>
+          <p>By default, OpenClaw executes tool calls without explicit user approval. Shell commands, file writes,
+            network requests — the LLM decides, and the LLM can be deceived.</p>
+          <div class="stat">The LLM cannot distinguish between trusted instructions and untrusted data — it becomes a
+            "confused deputy" — Cisco</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ════════════════════════════════════════════════════════════
+     QUOTES STRIP
+     ════════════════════════════════════════════════════════════ -->
+  <div class="quotes-strip">
+    <div class="quotes-grid">
+      <div class="quote-card">
+        <blockquote>"From a capability perspective, OpenClaw is groundbreaking. From a security perspective, it's an
+          absolute nightmare."</blockquote>
+        <div class="attribution"><strong>Cisco AI Defense</strong> — Security Research Team</div>
+      </div>
+      <div class="quote-card">
+        <blockquote>"If you can't understand how to run a command line, this is far too dangerous of a project for you
+          to use safely."</blockquote>
+        <div class="attribution"><strong>Shadow</strong> — OpenClaw Core Maintainer</div>
+      </div>
+      <div class="quote-card">
+        <blockquote>"AI agents get credentials to your entire digital life. Unlike browser extensions in a sandbox,
+          these agents operate with full privileges."</blockquote>
+        <div class="attribution"><strong>Ian Ahl</strong> — Permiso Security</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ════════════════════════════════════════════════════════════
+     HOW IT WORKS
+     ════════════════════════════════════════════════════════════ -->
+  <section class="how-it-works" id="how">
+    <div class="container">
+      <div class="section-label">How it works</div>
+      <h2 class="section-title">Three commands. Five minutes.<br>Actually secure.</h2>
+      <p class="section-sub">
+        ClawGuard works alongside your OpenClaw instance — not against it. Keep using everything you love. Remove
+        everything that can hurt you.
+      </p>
+
+      <div class="steps">
+        <div class="step">
+          <div class="step-number">01</div>
+          <h3>Scan your instance</h3>
+          <p>One command scans every installed skill for malware, data exfiltration, and prompt injection. Checks your
+            config for exposed ports, plaintext credentials, and dangerous permissions. Takes under 60 seconds.</p>
+          <code>$ npx clawguard scan</code>
+        </div>
+
+        <div class="step">
+          <div class="step-number">02</div>
+          <h3>Fix with one click</h3>
+          <p>Every finding comes with a severity rating, an explanation a human can understand, and a one-click fix.
+            Remove the malicious skill. Rotate the exposed key. Enable sandbox mode. Done.</p>
+          <code>$ npx clawguard fix --all</code>
+        </div>
+
+        <div class="step">
+          <div class="step-number">03</div>
+          <h3>Monitor 24/7</h3>
+          <p>Upgrade to Shield and ClawGuard watches your instance continuously. New skill installs get scanned
+            automatically. Config drift triggers alerts. New CVEs get flagged before they're exploited. You sleep.</p>
+          <code>→ clawguard.dev/dashboard</code>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ════════════════════════════════════════════════════════════
+     FEATURES
+     ════════════════════════════════════════════════════════════ -->
+  <section class="features" id="features">
+    <div class="container">
+      <div class="section-label">What you get</div>
+      <h2 class="section-title">Everything between your OpenClaw<br>and the threat actors.</h2>
+
+      <div class="features-grid">
+        <div class="feature-card">
+          <div class="feature-icon feature-icon--scan">🔍</div>
+          <div class="feature-body">
+            <h3>Skill Scanner</h3>
+            <p>Multi-layer analysis of every ClawHub skill: static code analysis, behavioral dataflow tracing, LLM
+              semantic analysis for covert prompt injection, and VirusTotal cross-reference. Catches what Cisco's
+              scanner misses.</p>
+            <span class="tag tag--free">Free</span>
+          </div>
+        </div>
+
+        <div class="feature-card">
+          <div class="feature-icon feature-icon--harden">🛡</div>
+          <div class="feature-body">
+            <h3>Instance Hardening</h3>
+            <p>Audits your OpenClaw config against 40+ security checks: sandbox mode, DM policies, tool permissions,
+              credential storage, port exposure, exec approvals, and network isolation. One-click remediation for every
+              finding.</p>
+            <span class="tag tag--free">Free</span>
+          </div>
+        </div>
+
+        <div class="feature-card">
+          <div class="feature-icon feature-icon--monitor">📡</div>
+          <div class="feature-body">
+            <h3>Continuous Monitoring</h3>
+            <p>Real-time surveillance of your running instance. Alerts on new skill installs, configuration changes,
+              unexpected network calls, credential access, and anomalous agent behavior. Delivered via the same channels
+              you use with OpenClaw.</p>
+            <span class="tag tag--pro">Shield</span>
+          </div>
+        </div>
+
+        <div class="feature-card">
+          <div class="feature-icon feature-icon--alert">🚨</div>
+          <div class="feature-body">
+            <h3>Threat Intelligence</h3>
+            <p>Weekly ClawHub security bulletins. Real-time alerts when new malicious skills are detected. CVE tracking
+              for OpenClaw core. Curated, prioritized, actionable — not a firehose of noise.</p>
+            <span class="tag tag--pro">Shield</span>
+          </div>
+        </div>
+
+        <div class="feature-card">
+          <div class="feature-icon feature-icon--intel">🧪</div>
+          <div class="feature-body">
+            <h3>Prompt Injection Shield</h3>
+            <p>Analyzes inbound messages across all connected channels for adversarial patterns before they reach your
+              agent. Blocks injection attempts from emails, DMs, web content, and Moltbook interactions.</p>
+            <span class="tag tag--pro">Shield</span>
+          </div>
+        </div>
+
+        <div class="feature-card">
+          <div class="feature-icon feature-icon--fleet">🏢</div>
+          <div class="feature-body">
+            <h3>Fleet Management</h3>
+            <p>Multi-instance dashboard for teams and enterprises. Enforce skill allowlists across all instances.
+              Centralized policy management. Audit logging. SSO/SAML. Compliance reporting.</p>
+            <span class="tag tag--enterprise">Enterprise</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ════════════════════════════════════════════════════════════
+     PRICING
+     ════════════════════════════════════════════════════════════ -->
+  <section class="pricing" id="pricing">
+    <div class="container">
+      <div class="section-label">Pricing</div>
+      <h2 class="section-title">Less than your monthly API costs.<br>More than worth it.</h2>
+      <p class="section-sub">
+        You're spending $30-70/month on LLM APIs to power your OpenClaw. Spend a fraction of that to make sure it isn't
+        robbing you blind.
+      </p>
+
+      <div class="pricing-grid">
+        <!-- FREE -->
+        <div class="pricing-card">
+          <div class="pricing-name">Scanner</div>
+          <div class="pricing-price">
+            <span class="currency">$</span>
+            <span class="amount">0</span>
+          </div>
+          <div class="pricing-annual">Free forever. Open source.</div>
+          <div class="pricing-desc">One-time scan of your skills and config. Catch the obvious stuff. A good start — but
+            threats don't stop after one scan.</div>
+          <ul class="pricing-features">
+            <li>Scan all installed skills for malware</li>
+            <li>Detect prompt injection & data exfil</li>
+            <li>Config audit (40+ security checks)</li>
+            <li>Severity-rated report with fix guidance</li>
+            <li>Community detection rules</li>
+          </ul>
+          <a href="#scan" class="pricing-btn pricing-btn--secondary">Run Free Scan</a>
+        </div>
+
+        <!-- SHIELD -->
+        <div class="pricing-card featured">
+          <div class="pricing-name">Shield</div>
+          <div class="pricing-price">
+            <span class="currency">$</span>
+            <span class="amount">9</span>
+            <span class="period">/mo</span>
+          </div>
+          <div class="pricing-annual">$89/year (save 18%) · 1 instance</div>
+          <div class="pricing-desc">Continuous monitoring. Automatic remediation. Threat intelligence. The "set it and
+            forget it" plan for anyone who actually uses OpenClaw for real work.</div>
+          <ul class="pricing-features">
+            <li>Everything in Scanner</li>
+            <li>24/7 continuous instance monitoring</li>
+            <li>Auto-scan new skill installs</li>
+            <li>One-click fix for all findings</li>
+            <li>Real-time threat alerts (email, Discord, Telegram)</li>
+            <li>Weekly ClawHub security bulletin</li>
+            <li>Config drift detection</li>
+            <li>Prompt injection shield for inbound messages</li>
+            <li>Priority support via Discord</li>
+          </ul>
+          <a href="#" class="pricing-btn pricing-btn--primary">Start Shield — 14 Days Free</a>
+        </div>
+
+        <!-- ARMOR -->
+        <div class="pricing-card">
+          <div class="pricing-name">Armor</div>
+          <div class="pricing-price">
+            <span class="currency">$</span>
+            <span class="amount">29</span>
+            <span class="period">/mo</span>
+          </div>
+          <div class="pricing-annual">$279/year (save 20%) · up to 5 instances</div>
+          <div class="pricing-desc">For teams and power users running multiple instances. Fleet dashboard, advanced
+            threat intelligence, and the full security stack.</div>
+          <ul class="pricing-features">
+            <li>Everything in Shield</li>
+            <li>Up to 5 OpenClaw instances</li>
+            <li>Team dashboard with role management</li>
+            <li>Skill allowlist/denylist enforcement</li>
+            <li>Advanced threat intelligence feed</li>
+            <li>Memory integrity analysis</li>
+            <li>Agent behavior anomaly detection</li>
+            <li>Credential rotation reminders</li>
+            <li>Priority email support</li>
+          </ul>
+          <a href="#" class="pricing-btn pricing-btn--secondary">Start Armor — 14 Days Free</a>
+        </div>
+      </div>
+
+      <p class="pricing-note">
+        Running 10+ instances or need SSO, compliance, and audit logs?<br>
+        <a href="#">Talk to us about Enterprise →</a>
+      </p>
+    </div>
+  </section>
+
+  <!-- ════════════════════════════════════════════════════════════
+     FAQ
+     ════════════════════════════════════════════════════════════ -->
+  <section class="faq" id="faq">
+    <div class="container">
+      <div class="section-label">FAQ</div>
+      <h2 class="section-title">Questions you're probably asking.</h2>
+
+      <div class="faq-grid">
+        <div class="faq-item">
+          <h3>Why not just use Cisco's Skill Scanner?</h3>
+          <p>Cisco's scanner is a great one-time check (we build on their open-source work and credit them). ClawGuard
+            adds continuous monitoring, automatic remediation, config hardening, prompt injection detection, and threat
+            intelligence. Cisco's scanner tells you there's a problem. ClawGuard fixes it and makes sure it doesn't
+            happen again.</p>
+        </div>
+
+        <div class="faq-item">
+          <h3>Will this slow down my OpenClaw?</h3>
+          <p>No. The scanner runs as a one-time audit (takes ~60 seconds). Continuous monitoring runs as a lightweight
+            sidecar process — it watches logs and config files, it doesn't intercept your agent's execution. Typical
+            overhead: &lt;2% CPU, &lt;50MB RAM.</p>
+        </div>
+
+        <div class="faq-item">
+          <h3>Can I trust you with access to my instance?</h3>
+          <p>ClawGuard is open-source at its core — inspect every line of code on GitHub. The scanner runs entirely
+            locally. The monitoring dashboard receives security events only (not your messages, files, or data). We
+            process zero PII. We're also working on SOC 2 Type II certification.</p>
+        </div>
+
+        <div class="faq-item">
+          <h3>I'm technical. Do I really need this?</h3>
+          <p>Shadow — an OpenClaw core maintainer — said the project is "far too dangerous" for non-technical users.
+            Kaspersky found 512 vulnerabilities in a single audit. Even if you're technical, are you auditing every
+            skill's source code? Checking ClawHub for new malicious packages daily? Monitoring your instance's network
+            calls 24/7? That's what we do.</p>
+        </div>
+
+        <div class="faq-item">
+          <h3>What if OpenClaw fixes its own security?</h3>
+          <p>We hope they do — and we help them (we contribute upstream). But even with perfect defaults, you still
+            need: independent scanning of third-party skills, continuous monitoring for config drift, threat
+            intelligence for new attack patterns, and audit evidence. WordPress is much more secure than it was in 2010.
+            Wordfence still has 5 million active installs.</p>
+        </div>
+
+        <div class="faq-item">
+          <h3>Is this just for OpenClaw?</h3>
+          <p>Today, yes. Our scanner and monitoring are purpose-built for OpenClaw's architecture. But the attack
+            surface — autonomous agents with system access and community plugins — is identical across Copilot, Gemini
+            agents, and every MCP-based system. We're starting where the need is most acute and expanding from there.
+          </p>
+        </div>
+
+        <div class="faq-item">
+          <h3>How is this different from antivirus?</h3>
+          <p>Traditional antivirus catches known malware signatures. OpenClaw's threats are different: prompt injection
+            hidden in natural language, behavioral data exfiltration that looks like normal API calls, and memory
+            poisoning that corrupts the agent over time. We use multi-layer analysis — static, behavioral, LLM semantic,
+            and runtime sandboxing — designed specifically for AI agent threats.</p>
+        </div>
+
+        <div class="faq-item">
+          <h3>Do you have a refund policy?</h3>
+          <p>14-day free trial on all paid plans. No credit card required to start. If you're not happy after that,
+            email us and we'll refund the current month, no questions asked. We'd rather have happy users than locked-in
+            users.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ════════════════════════════════════════════════════════════
+     FINAL CTA
+     ════════════════════════════════════════════════════════════ -->
+  <section class="cta-section">
+    <div class="container">
+      <h2>Your OpenClaw runs 24/7.<br>So should your security.</h2>
+      <p>Free scan takes 60 seconds. No signup required. See exactly what's exposed — then decide.</p>
+      <div class="cta-terminal">
+        <span class="t-prompt">$</span> <span class="t-cmd">npx clawguard scan</span>
+      </div>
+      <div class="hero-actions" style="margin-bottom: 0;">
+        <a href="#scan" class="btn-primary">Run Free Scan</a>
+        <a href="#pricing" class="btn-secondary">Compare Plans</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ════════════════════════════════════════════════════════════
+     FOOTER
+     ════════════════════════════════════════════════════════════ -->
+  <footer>
+    <div class="footer-links">
+      <a href="#">GitHub</a>
+      <a href="#">Docs</a>
+      <a href="#">Blog</a>
+      <a href="#">Discord</a>
+      <a href="#">Security Research</a>
+      <a href="#">Privacy</a>
+      <a href="#">Terms</a>
+    </div>
+    <p>ClawGuard is an independent project. Not affiliated with OpenClaw or Anthropic.<br>Built by security researchers
+      who love OpenClaw and want to keep it safe. 🦞</p>
+  </footer>
+
+</body>
+
+</html>
