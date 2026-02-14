@@ -4,7 +4,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>ClawGuard — Security for OpenClaw</title>
+  <title>ClawCop — Security for OpenClaw</title>
   <meta name="description"
     content="Scan your OpenClaw skills for malware. Monitor your instance 24/7. Sleep at night. The security layer OpenClaw doesn't have — yet.">
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -24,7 +24,7 @@
     <div class="nav-inner">
       <a href="#" class="nav-logo">
         <span class="claw-icon">🦞</span>
-        <span>ClawGuard</span>
+        <span>Clawcop</span>
       </a>
       <div class="nav-links">
         <a href="#problem">Threats</a>
@@ -61,10 +61,10 @@
         <div class="terminal-dot terminal-dot--red"></div>
         <div class="terminal-dot terminal-dot--yellow"></div>
         <div class="terminal-dot terminal-dot--green"></div>
-        <span>Terminal — clawguard scan</span>
+        <span>Terminal — clawcop scan</span>
       </div>
       <div class="terminal-body">
-        <span class="terminal-line"><span class="t-prompt">$</span> <span class="t-cmd">npx clawguard scan</span> <span
+        <span class="terminal-line"><span class="t-prompt">$</span> <span class="t-cmd">npx clawcop scan</span> <span
             class="t-flag">--instance ~/. openclaw</span></span>
         <span class="terminal-line"><span class="t-comment"># Scanning 47 installed skills...</span></span>
         <span class="terminal-line"><span class="t-comment"># Checking config, ports, credentials,
@@ -82,8 +82,8 @@
         <span class="terminal-line"><span class="t-safe">✓ PASS</span> gateway not exposed to public internet</span>
         <span class="terminal-line">&nbsp;</span>
         <span class="terminal-line"><span class="t-danger">Found 2 critical, 2 high, 1 medium issue.</span></span>
-        <span class="terminal-line"><span class="t-url">→ Fix all automatically with ClawGuard Shield:
-            clawguard.dev/fix</span></span>
+        <span class="terminal-line"><span class="t-url">→ Fix all automatically with Clawcop Shield:
+            clawcop.dev/fix</span></span>
         <span class="terminal-line"><span class="cursor-blink">█</span></span>
       </div>
     </div>
@@ -217,7 +217,7 @@
       <div class="section-label">How it works</div>
       <h2 class="section-title">Three commands. Five minutes.<br>Actually secure.</h2>
       <p class="section-sub">
-        ClawGuard works alongside your OpenClaw instance — not against it. Keep using everything you love. Remove
+        Clawcop works alongside your OpenClaw instance — not against it. Keep using everything you love. Remove
         everything that can hurt you.
       </p>
 
@@ -227,7 +227,7 @@
           <h3>Scan your instance</h3>
           <p>One command scans every installed skill for malware, data exfiltration, and prompt injection. Checks your
             config for exposed ports, plaintext credentials, and dangerous permissions. Takes under 60 seconds.</p>
-          <code>$ npx clawguard scan</code>
+          <code>$ npx clawcop scan</code>
         </div>
 
         <div class="step">
@@ -235,15 +235,15 @@
           <h3>Fix with one click</h3>
           <p>Every finding comes with a severity rating, an explanation a human can understand, and a one-click fix.
             Remove the malicious skill. Rotate the exposed key. Enable sandbox mode. Done.</p>
-          <code>$ npx clawguard fix --all</code>
+          <code>$ npx clawcop fix --all</code>
         </div>
 
         <div class="step">
           <div class="step-number">03</div>
           <h3>Monitor 24/7</h3>
-          <p>Upgrade to Shield and ClawGuard watches your instance continuously. New skill installs get scanned
+          <p>Upgrade to Shield and Clawcop watches your instance continuously. New skill installs get scanned
             automatically. Config drift triggers alerts. New CVEs get flagged before they're exploited. You sleep.</p>
-          <code>→ clawguard.dev/dashboard</code>
+          <code>→ clawcop.dev/dashboard</code>
         </div>
       </div>
     </div>
@@ -426,9 +426,9 @@
       <div class="faq-grid">
         <div class="faq-item">
           <h3>Why not just use Cisco's Skill Scanner?</h3>
-          <p>Cisco's scanner is a great one-time check (we build on their open-source work and credit them). ClawGuard
+          <p>Cisco's scanner is a great one-time check (we build on their open-source work and credit them). Clawcop
             adds continuous monitoring, automatic remediation, config hardening, prompt injection detection, and threat
-            intelligence. Cisco's scanner tells you there's a problem. ClawGuard fixes it and makes sure it doesn't
+            intelligence. Cisco's scanner tells you there's a problem. Clawcop fixes it and makes sure it doesn't
             happen again.</p>
         </div>
 
@@ -441,7 +441,7 @@
 
         <div class="faq-item">
           <h3>Can I trust you with access to my instance?</h3>
-          <p>ClawGuard is open-source at its core — inspect every line of code on GitHub. The scanner runs entirely
+          <p>Clawcop is open-source at its core — inspect every line of code on GitHub. The scanner runs entirely
             locally. The monitoring dashboard receives security events only (not your messages, files, or data). We
             process zero PII. We're also working on SOC 2 Type II certification.</p>
         </div>
@@ -496,7 +496,7 @@
       <h2>Your OpenClaw runs 24/7.<br>So should your security.</h2>
       <p>Free scan takes 60 seconds. No signup required. See exactly what's exposed — then decide.</p>
       <div class="cta-terminal">
-        <span class="t-prompt">$</span> <span class="t-cmd">npx clawguard scan</span>
+        <span class="t-prompt">$</span> <span class="t-cmd">npx clawcop scan</span>
       </div>
       <div class="hero-actions" style="margin-bottom: 0;">
         <a href="#scan" class="btn-primary">Run Free Scan</a>
@@ -518,7 +518,7 @@
       <a href="#">Privacy</a>
       <a href="#">Terms</a>
     </div>
-    <p>ClawGuard is an independent project. Not affiliated with OpenClaw or Anthropic.<br>Built by security researchers
+    <p>Clawcop is an independent project. Not affiliated with OpenClaw or Anthropic.<br>Built by security researchers
       who love OpenClaw and want to keep it safe. 🦞</p>
   </footer>
 
