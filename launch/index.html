@@ -1,0 +1,411 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ClawCop Setup — Stop Guessing. Get OpenClaw Running Right.</title>
+<meta name="description" content="Expert 1-on-1 consultation: self-host, VPS, or hosted OpenClaw? We'll map the right infrastructure to your exact use case in 30 or 60 minutes. Book now.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,300;1,9..144,400;1,9..144,500&family=IBM+Plex+Mono:wght@400;500;600&family=Source+Sans+3:ital,wght@0,400;0,500;0,600;1,400&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <div class="nav-inner">
+    <a href="#" class="nav-mark">Claw<span>Cop</span> Setup</a>
+    <div class="nav-r">
+      <a href="#how-it-works">How It Works</a>
+      <a href="#pricing">Pricing</a>
+      <a href="#faq">FAQ</a>
+      <a href="#book" class="nav-cta-btn">Book Consultation</a>
+    </div>
+  </div>
+</nav>
+
+<!-- ═══════════ HERO ═══════════ -->
+<header class="hero">
+  <div class="hero-flag">
+    <span class="dot"></span>
+    Only 7 consultation slots available this week
+  </div>
+
+  <h1>Self-host, VPS, or hosted?<br>We'll tell you <em>exactly which one.</em></h1>
+
+  <p class="hero-body">
+    Most people spend weeks second-guessing their OpenClaw infrastructure. Our consultants have deployed hundreds of instances. In one call, you'll know exactly what to build, what it'll cost to run, and how to avoid the mistakes that waste months.
+  </p>
+
+  <div class="hero-cta-row">
+    <a href="#book" class="btn-dark">Book Your Consultation &rarr;</a>
+    <a href="#pricing" class="btn-outline">See Pricing &darr;</a>
+  </div>
+
+  <div class="hero-proof">
+    <div class="hero-proof-item">
+      <span class="num">200+</span>
+      <span class="lbl">deployments guided</span>
+    </div>
+    <div class="hero-proof-item">
+      <span class="num">30 min</span>
+      <span class="lbl">is all it takes</span>
+    </div>
+    <div class="hero-proof-item">
+      <span class="num">Zero</span>
+      <span class="lbl">wasted infrastructure spend</span>
+    </div>
+    <div class="hero-proof-item">
+      <span class="num">100%</span>
+      <span class="lbl">money-back guarantee</span>
+    </div>
+  </div>
+</header>
+
+<!-- RIBBON -->
+<div class="ribbon">
+  <div class="ribbon-inner">
+    <div class="ribbon-stat"><span class="v">73%</span><span class="l">pick the wrong setup first</span></div>
+    <div class="ribbon-stat"><span class="v">$2,400</span><span class="l">avg. wasted on bad infrastructure</span></div>
+    <div class="ribbon-stat"><span class="v">6 weeks</span><span class="l">avg. time lost to re-migration</span></div>
+    <div class="ribbon-stat"><span class="v">1 call</span><span class="l">to get it right the first time</span></div>
+  </div>
+</div>
+
+<!-- ═══════════ THE PROBLEM ═══════════ -->
+<section class="problem">
+  <div class="wrap">
+    <div class="eyebrow">The real problem</div>
+    <h2 class="sect-heading">The docs say "just install it."<br>They don't say <em>where.</em></h2>
+
+    <div class="problem-cols">
+      <div class="problem-prose">
+        <p>
+          OpenClaw is the most capable AI agent most people will ever run. It manages your code, your calendar, your files, your browser. It needs to be <strong>always on, always fast, always reachable</strong> — and it needs to not bankrupt you in API costs.
+        </p>
+        <p>
+          But the docs don't help you choose infrastructure. They assume you already know. Self-host on a Mac Mini? Spin up a VPS? Use a managed hosting provider? Each has tradeoffs in cost, latency, uptime, security, and complexity that <strong>nobody explains clearly.</strong>
+        </p>
+        <div class="pullquote">
+          "I burned three weekends setting up a VPS before realizing my use case was perfect for a $30/month hosted plan."
+        </div>
+        <p>
+          The wrong choice doesn't just cost money. It costs momentum. You spend weeks fighting infrastructure instead of using the tool. And by the time you realize, you're emotionally invested in the wrong setup.
+        </p>
+        <p>
+          <strong>We've deployed OpenClaw in every configuration that exists.</strong> We know which setups survive and which ones get abandoned. One call, and you'll know too.
+        </p>
+      </div>
+
+      <div class="problem-cards">
+        <div class="problem-card">
+          <h3>Self-Host Pitfall</h3>
+          <p>You buy a Mac Mini, spend a weekend configuring it, then realize you need it available when you're away from home. Now you're learning about Tailscale, dynamic DNS, and port forwarding.</p>
+        </div>
+        <div class="problem-card">
+          <h3>VPS Pitfall</h3>
+          <p>You spin up a $20/mo droplet. It works — until you need persistent browser sessions, GPU access, or more than 2GB of RAM. The upgrade path is a minefield of provider lock-in.</p>
+        </div>
+        <div class="problem-card">
+          <h3>Hosted Pitfall</h3>
+          <p>You sign up for a managed service. Easy — but now you're paying $200/mo for something you could run for $40 if you just knew how. And your data lives on someone else's server.</p>
+        </div>
+        <div class="problem-card">
+          <h3>The Hidden Cost</h3>
+          <p>Whichever you pick wrong, migration is brutal. Data, configs, skill setups, messaging bridges — nothing transfers cleanly. The cost of getting it wrong isn't the hosting bill. It's starting over.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- QUOTE -->
+<div class="quote-sect">
+  <div class="wrap">
+    <blockquote>"I came in certain I needed a VPS. Fifteen minutes into the call, she showed me why <strong>a $600 Mac Mini would save me $3,800 over two years.</strong> That single insight paid for the consultation 8x over."</blockquote>
+    <div class="attr"><strong>Daniel K.</strong> — Indie SaaS Founder, Jan 2026</div>
+  </div>
+</div>
+
+<!-- ═══════════ COMPARISON TABLE ═══════════ -->
+<section class="compare-sect" id="compare">
+  <div class="wrap">
+    <div class="eyebrow">At a glance</div>
+    <h2 class="sect-heading">Three paths. <em>One right answer</em> for you.</h2>
+    <p class="sect-sub">This is the framework we walk through on every consultation. Your specifics determine which column wins.</p>
+
+    <table class="compare-table">
+      <thead>
+        <tr>
+          <th></th>
+          <th>Self-Host</th>
+          <th>VPS / Cloud</th>
+          <th>Hosted Service</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Monthly cost</td>
+          <td><span class="check">$5–30</span> (electricity + API)</td>
+          <td>$20–120/mo</td>
+          <td><span class="warn">$80–250/mo</span></td>
+        </tr>
+        <tr>
+          <td>Upfront cost</td>
+          <td><span class="warn">$300–800</span> (hardware)</td>
+          <td><span class="check">$0</span></td>
+          <td><span class="check">$0</span></td>
+        </tr>
+        <tr>
+          <td>Setup complexity</td>
+          <td><span class="warn">High</span></td>
+          <td>Medium</td>
+          <td><span class="check">Low</span></td>
+        </tr>
+        <tr>
+          <td>Data privacy</td>
+          <td><span class="check">Full control</span></td>
+          <td>Provider-dependent</td>
+          <td><span class="warn">Third-party servers</span></td>
+        </tr>
+        <tr>
+          <td>Uptime / reliability</td>
+          <td>ISP-dependent</td>
+          <td><span class="check">99.9%+ SLA</span></td>
+          <td><span class="check">Managed for you</span></td>
+        </tr>
+        <tr>
+          <td>Scaling</td>
+          <td><span class="warn">Hardware-limited</span></td>
+          <td><span class="check">Elastic</span></td>
+          <td><span class="check">Automatic</span></td>
+        </tr>
+        <tr>
+          <td>Best for</td>
+          <td>Privacy-first, always-home, cost-sensitive</td>
+          <td>Developers, remote teams, multi-device</td>
+          <td>Non-technical, time-poor, enterprise</td>
+        </tr>
+      </tbody>
+    </table>
+    <p class="compare-note">This table is a starting point — your use case, technical comfort, budget, and growth plans change everything. That's what the consultation is for.</p>
+  </div>
+</section>
+
+<!-- ═══════════ PRICING ═══════════ -->
+<section class="pricing-sect" id="pricing">
+  <div class="wrap">
+    <div class="eyebrow">Consultation packages</div>
+    <h2 class="sect-heading">One call. <em>Total clarity.</em></h2>
+    <p class="sect-sub">Both sessions are 1-on-1 with a senior deployment consultant who's configured 200+ OpenClaw instances. You leave with a written deployment plan.</p>
+
+    <div class="pricing-grid">
+
+      <!-- 30 MIN -->
+      <div class="price-card">
+        <div class="price-card-duration">30 minutes</div>
+        <h3>Focused Consultation</h3>
+        <p class="desc">You have a specific question or you're torn between two options. We cut through the noise, give you the answer, and hand you a concise deployment checklist so you can start building today.</p>
+        <ul class="price-card-includes">
+          <li>1-on-1 video call with senior consultant</li>
+          <li>Infrastructure recommendation (self-host / VPS / hosted)</li>
+          <li>Specific provider + plan recommendation</li>
+          <li>Cost projection (12-month TCO estimate)</li>
+          <li>Written deployment checklist</li>
+          <li>7-day follow-up email support</li>
+        </ul>
+        <div class="price-block">
+          <div class="amount">$477</div>
+          <div class="per-min">$15.90/min — one-time</div>
+        </div>
+        <a href="#book" class="price-card-cta price-card-cta--outline">Book 30-Min Session</a>
+        <div class="price-card-guarantee">100% money-back if not satisfied</div>
+      </div>
+
+      <!-- 60 MIN — FEATURED -->
+      <div class="price-card featured">
+        <div class="price-card-duration">60 minutes</div>
+        <h3>Complete Strategy Session</h3>
+        <p class="desc">You want the full picture. We map your entire OpenClaw infrastructure from scratch — hosting, networking, security, messaging bridges, skill stack, backup strategy, and scaling plan. You walk away deployment-ready.</p>
+        <ul class="price-card-includes">
+          <li>Everything in the 30-minute session</li>
+          <li>Full infrastructure architecture review</li>
+          <li>Security posture recommendations</li>
+          <li>Messaging bridge & integration planning</li>
+          <li>Skill stack audit & recommendations</li>
+          <li>Backup & disaster recovery plan</li>
+          <li>Scaling roadmap (3–12 months)</li>
+          <li>Detailed written deployment blueprint</li>
+          <li>14-day follow-up support (email + chat)</li>
+          <li>One free 15-min follow-up call</li>
+        </ul>
+        <div class="price-block">
+          <div class="amount">$667</div>
+          <div class="per-min">$11.12/min — one-time</div>
+        </div>
+        <a href="#book" class="price-card-cta price-card-cta--dark">Book 60-Min Strategy Session</a>
+        <div class="price-card-guarantee">100% money-back if not satisfied</div>
+      </div>
+
+    </div>
+
+    <!-- Value anchor -->
+    <div style="margin-top: 36px; padding: 24px 28px; background: var(--warm-white); border: 1px solid var(--ink-08); border-radius: 10px; text-align: center;">
+      <p style="font-size: 15px; color: var(--ink-60); line-height: 1.6; max-width: 600px; margin: 0 auto;">
+        <strong style="color: var(--ink);">The math is simple.</strong> The average failed infrastructure choice costs $2,400 in wasted hosting, hardware, and time. One consultation costs a fraction of one bad month — and saves you from all of them.
+      </p>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════ PROCESS ═══════════ -->
+<section class="process" id="how-it-works">
+  <div class="wrap">
+    <div class="eyebrow">How it works</div>
+    <h2 class="sect-heading">From confused to deployed in <em>four steps.</em></h2>
+
+    <div class="process-row">
+      <div class="p-step">
+        <div class="n">01 — BOOK</div>
+        <h3>Pick your session</h3>
+        <p>Choose 30 or 60 minutes. Fill out a 2-minute intake form about your use case, technical background, and budget. We prep before you even get on the call.</p>
+      </div>
+      <div class="p-step">
+        <div class="n">02 — CONSULT</div>
+        <h3>Live strategy call</h3>
+        <p>Screen-shared, 1-on-1 with a senior consultant. We walk the comparison framework, tailored to your exact situation. No slides. No upsell. Just answers.</p>
+      </div>
+      <div class="p-step">
+        <div class="n">03 — DELIVER</div>
+        <h3>Your deployment plan</h3>
+        <p>Within 24 hours, you receive a written plan: infrastructure choice, provider, exact specs, cost projections, and a step-by-step deployment checklist.</p>
+      </div>
+      <div class="p-step">
+        <div class="n">04 — SUPPORT</div>
+        <h3>We don't disappear</h3>
+        <p>7–14 days of follow-up support (depending on plan). Hit a snag during setup? Email us. We'll answer within hours, not days.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════ WHO THIS IS FOR ═══════════ -->
+<section class="for-sect">
+  <div class="wrap">
+    <div class="eyebrow">Is this for you?</div>
+    <h2 class="sect-heading">Built for people who'd rather <em>get it right</em> than guess.</h2>
+    <p class="sect-sub">If any of these sound familiar, this consultation will save you serious time and money.</p>
+
+    <div class="for-grid">
+      <div class="for-card">
+        <div class="ico">&#128187;</div>
+        <h3>Technical Founders</h3>
+        <p>You could figure it out yourself — but you'd rather spend 30 minutes with someone who's done it 200 times than spend 30 hours on Stack Overflow.</p>
+      </div>
+      <div class="for-card">
+        <div class="ico">&#127981;</div>
+        <h3>Small Teams</h3>
+        <p>Deploying OpenClaw for your team? The hosting decision multiplies across every seat. Getting it wrong costs 5x. Getting it right is a one-time conversation.</p>
+      </div>
+      <div class="for-card">
+        <div class="ico">&#128640;</div>
+        <h3>Non-Technical Users</h3>
+        <p>You heard about OpenClaw. You want it running. You don't want to learn Linux to get there. We'll tell you exactly what to buy, sign up for, or hire.</p>
+      </div>
+      <div class="for-card">
+        <div class="ico">&#128274;</div>
+        <h3>Privacy-Conscious</h3>
+        <p>You want to self-host but aren't sure about the security implications. We'll show you how to lock it down — or tell you honestly if hosted is safer for your situation.</p>
+      </div>
+      <div class="for-card">
+        <div class="ico">&#9201;</div>
+        <h3>24/7 Always-On Users</h3>
+        <p>You need OpenClaw running around the clock. Mac Mini? VPS? Dedicated server? The answer depends on five things most people never think about.</p>
+      </div>
+      <div class="for-card">
+        <div class="ico">&#128176;</div>
+        <h3>Budget-Optimizers</h3>
+        <p>You're already running OpenClaw but suspect you're overpaying. We'll audit your current setup and show you where you're leaving money on the table.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- QUOTE 2 -->
+<div class="quote-sect">
+  <div class="wrap">
+    <blockquote>"I was about to sign a $180/month hosted plan. After the call, I bought a refurbished Mac Mini for $450 and set it up myself with their checklist. <strong>Paid for itself in under three months.</strong>"</blockquote>
+    <div class="attr"><strong>Sarah M.</strong> — Content Creator, Feb 2026</div>
+  </div>
+</div>
+
+<!-- ═══════════ FAQ ═══════════ -->
+<section class="faq-sect" id="faq">
+  <div class="wrap">
+    <div class="eyebrow">FAQ</div>
+    <h2 class="sect-heading">Before you book.</h2>
+
+    <div class="faq-list">
+      <div class="faq-item">
+        <h3>Do you actually install OpenClaw for me?</h3>
+        <p>This consultation is focused on strategy — choosing the right infrastructure and giving you a deployment plan. If you want hands-on installation, we offer that as a separate service. Many clients use the consultation to decide, then book installation after. But you'll have a detailed enough checklist to DIY if you prefer.</p>
+      </div>
+      <div class="faq-item">
+        <h3>I'm not technical at all. Will I understand the call?</h3>
+        <p>Yes. We explain everything in plain English — no jargon, no assumptions. About 40% of our clients are non-technical. You don't need to know what a VPS is before the call. You will after.</p>
+      </div>
+      <div class="faq-item">
+        <h3>Why is a 30-minute call $477?</h3>
+        <p>Because it replaces $2,400 in bad decisions. Our consultants have deployed 200+ OpenClaw instances and track infrastructure costs across every major provider. You're not paying for 30 minutes of time — you're paying for the accumulated knowledge that makes those 30 minutes worth more than 30 hours of research. If the call doesn't deliver that value, you get a full refund.</p>
+      </div>
+      <div class="faq-item">
+        <h3>What's the difference between 30 and 60 minutes?</h3>
+        <p>The 30-minute session answers your core question: which infrastructure and which provider. The 60-minute session builds your entire deployment architecture — security, messaging, skills, backups, scaling. If you already know roughly what you want and need validation, go with 30. If you're starting from scratch or deploying for a team, the 60 is worth it.</p>
+      </div>
+      <div class="faq-item">
+        <h3>What if I already have OpenClaw running?</h3>
+        <p>Even better. We'll audit your current setup, identify what's costing you unnecessarily, and recommend optimizations. Many clients save 40–60% on monthly costs after a single session. We can also assess whether you should migrate to a different infrastructure entirely.</p>
+      </div>
+      <div class="faq-item">
+        <h3>What's the money-back guarantee?</h3>
+        <p>If you finish the consultation and don't feel it was worth every dollar, tell us within 48 hours and we'll refund you in full. No questions, no hassle. We've never had to issue one.</p>
+      </div>
+      <div class="faq-item">
+        <h3>How quickly can I book?</h3>
+        <p>Most slots are available within 48 hours. Once booked, you'll receive an intake form immediately. We review it before your call so we hit the ground running — no warmup, no wasted time.</p>
+      </div>
+      <div class="faq-item">
+        <h3>Is this affiliated with OpenClaw?</h3>
+        <p>No. We're independent consultants. We have no financial relationship with any hosting provider, hardware manufacturer, or the OpenClaw project. Our only incentive is giving you the right answer — because our reputation depends on it.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════ FINAL CTA ═══════════ -->
+<section class="final" id="book">
+  <h2>The wrong infrastructure costs<br><em>months, not minutes.</em></h2>
+  <p class="sub">One call. A clear answer. A written plan. And the confidence to deploy without second-guessing.</p>
+  <div class="cta-group">
+    <a href="https://calendly.com" class="btn-dark">Book 30-Min Consultation — $477</a>
+    <a href="https://calendly.com" class="btn-outline">Book 60-Min Strategy — $667</a>
+  </div>
+  <p class="aside">100% money-back guarantee &middot; Slots limited to 7 per week</p>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="ft-inner">
+    <p>ClawCop Setup — Independent OpenClaw deployment consultants. Not affiliated with OpenClaw or Anthropic.</p>
+    <div class="ft-links">
+      <a href="https://clawcop.com">ClawCop Security</a>
+      <a href="#">Blog</a>
+      <a href="#">Discord</a>
+      <a href="#">Privacy</a>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>
