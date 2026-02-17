@@ -262,6 +262,111 @@ nav {
     transition: background 0.15s, transform 0.15s;
 }
 
+.quote-sec {
+    padding: 50px 8px;
+    background: var(--ink);
+    color: var(--cream);
+}
+
+.quote-sec .wrap {
+    max-width: 700px;
+    text-align: center;
+}
+
+.quote-sec blockquote {
+    font-family: var(--serif);
+    font-size: clamp(20px, 2.8vw, 28px);
+    font-weight: 400;
+    font-style: italic;
+    line-height: 1.45;
+    color: rgba(246, 243, 237, 0.75);
+}
+
+.quote-sec blockquote strong {
+    color: var(--cream);
+    font-weight: 500;
+    font-style: normal;
+}
+
+.quote-sec .attr {
+    font-family: var(--mono);
+    font-size: 18px;
+    color: rgba(246, 243, 237, 0.35);
+}
+
+.quote-sec .attr strong {
+    color: var(--rust-light);
+    font-weight: 600;
+}
+
+.btn-launch {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    font-family: var(--serif);
+    font-size: 18px;
+    font-weight: 600;
+    color: var(--cream);
+    background: var(--ink);
+    padding: 8px 30px;
+    border-radius: 8px;
+    text-decoration: none;
+    border: 1px solid currentColor;
+    /* thin border */
+    cursor: pointer;
+    transition: background 0.15s, transform 0.15s;
+    position: relative;
+    /* needed for underline */
+}
+
+/* underline (same color as text) */
+.btn-launch::after {
+    content: "";
+    position: absolute;
+    left: 28px;
+    /* match horizontal padding */
+    right: 28px;
+    /* match horizontal padding */
+    bottom: 10px;
+    /* place underline inside button */
+    height: 2px;
+    background: currentColor;
+    /* same as font color */
+    opacity: 0.9;
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: transform 0.2s ease;
+}
+
+.btn-launch:hover {
+    background: var(--ink-80);
+    transform: translateY(-1px);
+    border-color: rgba(255, 255, 255, 0.85);
+    /* or keep currentColor */
+}
+
+
+.btn-launch:hover::after {
+    transform: scaleX(1);
+}
+
+/* arrow animation */
+.btn-arrow {
+    display: inline-block;
+    transition: transform 0.2s ease;
+}
+
+.btn-launch:hover .btn-arrow {
+    transform: translateX(6px);
+}
+
+/* optional: subtle focus ring for accessibility */
+.btn-launch:focus-visible {
+    outline: 2px solid currentColor;
+    outline-offset: 3px;
+}
+
+
 .btn-dark:hover {
     background: var(--ink-80);
     transform: translateY(-1px);
