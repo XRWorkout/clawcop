@@ -6,3 +6,10 @@
     X-Frame-Options = "DENY"
     Referrer-Policy = "strict-origin-when-cross-origin"
     Permissions-Policy = "camera=(), microphone=(), geolocation=(), payment=(), usb=(), vr=()"
+
+# Redirects (pretty links)
+[[redirects]]
+  from = "/discovery"
+  to = "https://msafdarnawaz.typeform.com/to/cM2kQ6K1"
+  status = 302
+  force = true
