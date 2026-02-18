@@ -14,7 +14,7 @@
   <meta property="og:title" content="ClawCop Setup — Stop Guessing. Get OpenClaw Running Right.">
   <meta property="og:description"
     content="Expert 1-on-1 consultation. Self-host, VPS, or hosted? Get the right answer in 30 minutes.">
-  <meta property="og:image" content="https://www.clawcop.com/assets/clawcop-salute.png">
+  <meta property="og:image" content="https://www.clawcop.com/assets/clawcop-salute.webp">
 
   <!-- Twitter -->
   <meta property="twitter:card" content="summary_large_image">
@@ -22,7 +22,7 @@
   <meta property="twitter:title" content="ClawCop Setup — Stop Guessing. Get OpenClaw Running Right.">
   <meta property="twitter:description"
     content="Expert 1-on-1 consultation. Self-host, VPS, or hosted? Get the right answer in 30 minutes.">
-  <meta property="twitter:image" content="https://www.clawcop.com/assets/clawcop-salute.png">
+  <meta property="twitter:image" content="https://www.clawcop.com/assets/clawcop-salute.webp">
 
   <!-- Favicon -->
   <link rel="icon" href="../favicon.ico" sizes="any">
@@ -50,7 +50,6 @@
     </div>
   </nav>
 
-
   <!-- ═══════════ HERO ═══════════ -->
   <header class="hero">
     <div class="hero-main">
@@ -60,7 +59,7 @@
           Only 7 consultation slots available this week
         </div>
 
-        <h1>Self-host, VPS, or hosted? We'll tell you <em> exactly<br> which one.</em></h1>
+        <h1>Self-host, VPS, or hosted? We'll tell you <em> exactly which one.</em></h1>
 
         <p class="hero-body">
           Most people spend weeks second-guessing their OpenClaw infrastructure.
@@ -76,8 +75,10 @@
       </div>
 
       <div class="hero-visual">
-        <img src="../assets/clawcop-pointing.png" alt="ClawCop mascot — a friendly lobster police officer saluting"
-          class="mascot-img" width="1024" height="1024">
+        <div class="hero-art">
+          <img src="../assets/clawcop-pointing.webp" alt="ClawCop mascot — a friendly lobster police officer saluting"
+            class="mascot-img" width="1024" height="1024" loading="eager" decoding="async">
+        </div>
       </div>
     </div>
 
@@ -188,61 +189,63 @@
       <h2 class="sect-heading">Three paths. <em>One right answer</em> for you.</h2>
       <p class="sect-sub">This is the framework we walk through on every consultation. Your specifics determine which
         column wins.</p>
-
-      <table class="compare-table">
-        <thead>
-          <tr>
-            <th></th>
-            <th>Self-Host</th>
-            <th>VPS / Cloud</th>
-            <th>Hosted Service</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td>Monthly cost</td>
-            <td><span class="check">$5–30</span> (electricity + API)</td>
-            <td>$20–120/mo</td>
-            <td><span class="warn">$80–250/mo</span></td>
-          </tr>
-          <tr>
-            <td>Upfront cost</td>
-            <td><span class="warn">$300–800</span> (hardware)</td>
-            <td><span class="check">$0</span></td>
-            <td><span class="check">$0</span></td>
-          </tr>
-          <tr>
-            <td>Setup complexity</td>
-            <td><span class="warn">High</span></td>
-            <td>Medium</td>
-            <td><span class="check">Low</span></td>
-          </tr>
-          <tr>
-            <td>Data privacy</td>
-            <td><span class="check">Full control</span></td>
-            <td>Provider-dependent</td>
-            <td><span class="warn">Third-party servers</span></td>
-          </tr>
-          <tr>
-            <td>Uptime / reliability</td>
-            <td>ISP-dependent</td>
-            <td><span class="check">99.9%+ SLA</span></td>
-            <td><span class="check">Managed for you</span></td>
-          </tr>
-          <tr>
-            <td>Scaling</td>
-            <td><span class="warn">Hardware-limited</span></td>
-            <td><span class="check">Elastic</span></td>
-            <td><span class="check">Automatic</span></td>
-          </tr>
-          <tr>
-            <td>Best for</td>
-            <td>Privacy-first, always-home, cost-sensitive</td>
-            <td>Developers, remote teams, multi-device</td>
-            <td>Non-technical, time-poor, enterprise</td>
-          </tr>
-        </tbody>
-      </table>
+      <div class="compare-scrollhint">
+        <br>
+        <table class="compare-table">
+          <thead>
+            <tr>
+              <th></th>
+              <th>Self-Host</th>
+              <th>VPS / Cloud</th>
+              <th>Hosted Service</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Monthly cost</td>
+              <td><span class="check">$5–30</span> (electricity + API)</td>
+              <td>$20–120/mo</td>
+              <td><span class="warn">$80–250/mo</span></td>
+            </tr>
+            <tr>
+              <td>Upfront cost</td>
+              <td><span class="warn">$300–800</span> (hardware)</td>
+              <td><span class="check">$0</span></td>
+              <td><span class="check">$0</span></td>
+            </tr>
+            <tr>
+              <td>Setup complexity</td>
+              <td><span class="warn">High</span></td>
+              <td>Medium</td>
+              <td><span class="check">Low</span></td>
+            </tr>
+            <tr>
+              <td>Data privacy</td>
+              <td><span class="check">Full control</span></td>
+              <td>Provider-dependent</td>
+              <td><span class="warn">Third-party servers</span></td>
+            </tr>
+            <tr>
+              <td>Uptime / reliability</td>
+              <td>ISP-dependent</td>
+              <td><span class="check">99.9%+ SLA</span></td>
+              <td><span class="check">Managed for you</span></td>
+            </tr>
+            <tr>
+              <td>Scaling</td>
+              <td><span class="warn">Hardware-limited</span></td>
+              <td><span class="check">Elastic</span></td>
+              <td><span class="check">Automatic</span></td>
+            </tr>
+            <tr>
+              <td>Best for</td>
+              <td>Privacy-first, always-home, cost-sensitive</td>
+              <td>Developers, remote teams, multi-device</td>
+              <td>Non-technical, time-poor, enterprise</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
       <p class="compare-note">This table is a starting point — your use case, technical comfort, budget, and growth
         plans change everything. That's what the consultation is for.</p>
     </div>
