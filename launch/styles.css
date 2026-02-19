@@ -1227,26 +1227,34 @@ footer p {
 }
 
 /* ===== Responsive Compare Table (no HTML changes) ===== */
+/* ===== Mobile swipe table (FULLY EDITED) ===== */
 
-/* Wrap table area on small screens */
+/* Swipe hint wrapper (always) */
+.compare-scrollhint {
+  position: relative;
+}
+
+/* Mobile: make the WRAPPER scroll, not the table */
 @media (max-width: 900px) {
-  .compare-table {
-    display: block;
-    /* allows overflow scrolling */
+  .compare-scrollhint {
     overflow-x: auto;
     -webkit-overflow-scrolling: touch;
-    white-space: nowrap;
-    /* prevents columns from squishing */
     border-radius: 12px;
+  }
+
+  /* Keep the table as a real table (better sticky + layout) */
+  .compare-table {
+    width: 100%;
+    min-width: 760px;      /* forces horizontal swipe on mobile */
+    border-radius: 12px;   /* matches your design */
+    white-space: normal;   /* allow wrapping inside cells */
   }
 
   /* Keep cells readable */
   .compare-table thead th,
   .compare-table tbody td {
-    white-space: normal;
-    /* allow wrapping inside cells */
-    min-width: 190px;
-    /* column width */
+    min-width: 190px;      /* column width */
+    white-space: normal;   /* allow wrapping inside cells */
   }
 
   /* Sticky row-label column (first column) */
@@ -1254,15 +1262,13 @@ footer p {
   .compare-table tbody td:first-child {
     position: sticky;
     left: 0;
-    z-index: 3;
+    z-index: 4;
     background: var(--warm-white);
-    /* header-like background */
   }
 
   .compare-table tbody td:first-child {
     background: var(--cream);
-    /* matches table body background */
-    z-index: 2;
+    z-index: 3;
   }
 
   /* Optional: slightly smaller text */
@@ -1274,24 +1280,8 @@ footer p {
   .compare-table thead th {
     padding: 16px 16px;
   }
-}
 
-/* Extra small phones */
-@media (max-width: 430px) {
-
-  .compare-table thead th,
-  .compare-table tbody td {
-    min-width: 170px;
-  }
-}
-
-/* ===== Swipe hint wrapper ===== */
-.compare-scrollhint {
-  position: relative;
-}
-
-/* Right-edge fade + hint (mobile only) */
-@media (max-width: 900px) {
+  /* Right-edge fade (mobile only) */
   .compare-scrollhint::after {
     content: '';
     position: absolute;
@@ -1305,6 +1295,7 @@ footer p {
     z-index: 5;
   }
 
+  /* Swipe hint chip (mobile only) */
   .compare-scrollhint::before {
     content: 'Swipe →';
     position: absolute;
@@ -1330,7 +1321,6 @@ footer p {
   }
 
   @keyframes swipeNudge {
-
     0%,
     100% {
       transform: translateX(0);
@@ -1341,5 +1331,18 @@ footer p {
       transform: translateX(-6px);
       opacity: 1;
     }
+  }
+}
+
+/* Extra small phones */
+@media (max-width: 430px) {
+  .compare-table thead th,
+  .compare-table tbody td {
+    min-width: 170px;
+  }
+
+  /* Optional: slightly smaller min table width on very small screens */
+  .compare-table {
+    min-width: 680px;
   }
 }
