@@ -1245,16 +1245,21 @@ footer p {
   /* Keep the table as a real table (better sticky + layout) */
   .compare-table {
     width: 100%;
-    min-width: 760px;      /* forces horizontal swipe on mobile */
-    border-radius: 12px;   /* matches your design */
-    white-space: normal;   /* allow wrapping inside cells */
+    min-width: 760px;
+    /* forces horizontal swipe on mobile */
+    border-radius: 12px;
+    /* matches your design */
+    white-space: normal;
+    /* allow wrapping inside cells */
   }
 
   /* Keep cells readable */
   .compare-table thead th,
   .compare-table tbody td {
-    min-width: 190px;      /* column width */
-    white-space: normal;   /* allow wrapping inside cells */
+    min-width: 190px;
+    /* column width */
+    white-space: normal;
+    /* allow wrapping inside cells */
   }
 
   /* Sticky row-label column (first column) */
@@ -1291,7 +1296,6 @@ footer p {
     height: 100%;
     pointer-events: none;
     border-radius: 12px;
-    background: linear-gradient(to left, rgba(246, 243, 237, 1), rgba(246, 243, 237, 0));
     z-index: 5;
   }
 
@@ -1321,6 +1325,7 @@ footer p {
   }
 
   @keyframes swipeNudge {
+
     0%,
     100% {
       transform: translateX(0);
@@ -1336,6 +1341,7 @@ footer p {
 
 /* Extra small phones */
 @media (max-width: 430px) {
+
   .compare-table thead th,
   .compare-table tbody td {
     min-width: 170px;

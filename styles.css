@@ -1172,3 +1172,12 @@ footer p {
         justify-content: center;
     }
 }
+
+.terminal-label {
+    font-family: var(--mono);
+    font-size: 11px;
+    opacity: 0.5;
+    margin-bottom: 4px;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+}
