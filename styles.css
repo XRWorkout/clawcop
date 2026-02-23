@@ -198,6 +198,8 @@ nav {
     flex: 1 1 520px;
     min-width: 280px;
     max-width: 680px;
+      z-index: 3;
+
 }
 
 /* Right side "artboard" */
@@ -243,6 +245,7 @@ nav {
     flex-wrap: wrap;
     margin-bottom: 56px;
     animation: fadeUp 0.5s 0.18s var(--ease) both;
+    z-index: 5;
 }
 
 .btn-dark {
@@ -354,6 +357,9 @@ nav {
 .btn-arrow {
     display: inline-block;
     transition: transform 0.2s ease;
+}
+.btngo:hover .btn-arrow {
+        transform: translateX(6px);
 }
 
 .btn-launch:hover .btn-arrow {
