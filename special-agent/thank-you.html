@@ -1,0 +1,427 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Mission Accepted — Special Agent by ClawCop</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300..900;1,9..144,300..900&family=IBM+Plex+Mono:wght@400;500&family=Source+Sans+3:wght@400;500;600&display=swap" rel="stylesheet" />
+
+  <style>
+    /* ── Design tokens ─────────────────────────────────────── */
+    :root {
+      --cream:        #f6f3ed;
+      --ink:          #1a1714;
+      --ink-80:       #3d3830;
+      --ink-60:       #635c52;
+      --ink-40:       #908678;
+      --ink-08:       #e8e4de;
+      --cream-dark:   #ece7de;
+      --rust:         #b04a2e;
+      --rust-wash:    rgba(176, 74, 46, 0.06);
+      --rust-border:  rgba(176, 74, 46, 0.18);
+      --serif:        'Fraunces', Georgia, serif;
+      --mono:         'IBM Plex Mono', monospace;
+      --sans:         'Source Sans 3', sans-serif;
+    }
+
+    /* ── Reset & base ──────────────────────────────────────── */
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    html { font-size: 17px; }
+
+    body {
+      background-color: var(--cream);
+      color: var(--ink);
+      font-family: var(--sans);
+      line-height: 1.7;
+      -webkit-font-smoothing: antialiased;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    /* ── Animation ─────────────────────────────────────────── */
+    @keyframes fadeUp {
+      from {
+        opacity: 0;
+        transform: translateY(24px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    .fade-up {
+      animation: fadeUp 0.6s ease both;
+    }
+
+    .fade-up-delay-1 { animation-delay: 0.10s; }
+    .fade-up-delay-2 { animation-delay: 0.20s; }
+    .fade-up-delay-3 { animation-delay: 0.32s; }
+    .fade-up-delay-4 { animation-delay: 0.44s; }
+    .fade-up-delay-5 { animation-delay: 0.56s; }
+
+    /* ── Nav ───────────────────────────────────────────────── */
+    nav {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 28px 32px;
+      border-bottom: 1px solid var(--ink-08);
+    }
+
+    .nav-logo {
+      font-family: var(--serif);
+      font-size: 1.15rem;
+      font-weight: 500;
+      letter-spacing: -0.01em;
+      color: var(--ink);
+      transition: opacity 0.2s ease;
+    }
+
+    .nav-logo:hover { opacity: 0.7; }
+
+    /* ── Main ──────────────────────────────────────────────── */
+    main {
+      flex: 1;
+      max-width: 640px;
+      margin: 0 auto;
+      padding: 100px 28px 80px;
+      width: 100%;
+    }
+
+    /* Hero icon */
+    .hero-icon {
+      display: flex;
+      justify-content: center;
+      margin-bottom: 32px;
+    }
+
+    .hero-icon svg {
+      width: 80px;
+      height: 80px;
+    }
+
+    /* Eyebrow */
+    .eyebrow {
+      font-family: var(--mono);
+      font-size: 0.68rem;
+      font-weight: 500;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--rust);
+      text-align: center;
+      margin-bottom: 20px;
+    }
+
+    /* Heading */
+    h1 {
+      font-family: var(--serif);
+      font-size: 3rem;
+      font-weight: 400;
+      letter-spacing: -0.025em;
+      line-height: 1.15;
+      text-align: center;
+      color: var(--ink);
+      margin-bottom: 28px;
+    }
+
+    h1 em {
+      font-style: italic;
+      color: var(--ink-80);
+    }
+
+    /* Intro body */
+    .intro-body {
+      font-family: var(--sans);
+      font-size: 1.12rem;
+      line-height: 1.75;
+      color: var(--ink-60);
+      text-align: center;
+      max-width: 520px;
+      margin: 0 auto;
+    }
+
+    .intro-body p + p {
+      margin-top: 1em;
+    }
+
+    /* Divider */
+    .divider {
+      border: none;
+      border-top: 1px solid var(--ink-08);
+      margin: 48px 0;
+    }
+
+    /* Steps section */
+    .steps-section {
+      max-width: 480px;
+      margin: 0 auto;
+    }
+
+    .steps-eyebrow {
+      font-family: var(--mono);
+      font-size: 0.65rem;
+      font-weight: 500;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--ink-40);
+      margin-bottom: 28px;
+    }
+
+    .steps-list {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 32px;
+    }
+
+    .step {
+      display: grid;
+      grid-template-columns: 32px 1fr;
+      gap: 0 20px;
+      align-items: start;
+    }
+
+    .step-number {
+      font-family: var(--mono);
+      font-size: 0.78rem;
+      font-weight: 500;
+      color: var(--rust);
+      padding-top: 3px;
+      letter-spacing: 0.02em;
+    }
+
+    .step-body {}
+
+    .step-title {
+      font-family: var(--serif);
+      font-size: 1.05rem;
+      font-weight: 500;
+      letter-spacing: -0.01em;
+      color: var(--ink);
+      margin-bottom: 4px;
+      line-height: 1.3;
+    }
+
+    .step-desc {
+      font-family: var(--sans);
+      font-size: 0.94rem;
+      color: var(--ink-60);
+      line-height: 1.65;
+    }
+
+    /* CTA section */
+    .cta-section {
+      text-align: center;
+    }
+
+    .cta-label {
+      font-family: var(--mono);
+      font-size: 0.65rem;
+      font-weight: 500;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--ink-40);
+      margin-bottom: 16px;
+    }
+
+    h3 {
+      font-family: var(--serif);
+      font-size: 1.5rem;
+      font-weight: 400;
+      letter-spacing: -0.015em;
+      color: var(--ink);
+      margin-bottom: 10px;
+      line-height: 1.25;
+    }
+
+    .cta-body {
+      font-family: var(--sans);
+      font-size: 1rem;
+      color: var(--ink-60);
+      margin-bottom: 28px;
+    }
+
+    /* Button */
+    .btn-outline {
+      display: inline-block;
+      font-family: var(--mono);
+      font-size: 0.78rem;
+      font-weight: 500;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      color: var(--rust);
+      border: 1.5px solid var(--rust-border);
+      background: transparent;
+      padding: 13px 28px;
+      border-radius: 2px;
+      text-decoration: none;
+      transition: background 0.2s ease, border-color 0.2s ease, color 0.2s ease;
+    }
+
+    .btn-outline:hover {
+      background: var(--rust-wash);
+      border-color: var(--rust);
+      color: var(--rust);
+    }
+
+    /* ── Footer ────────────────────────────────────────────── */
+    footer {
+      text-align: center;
+      padding: 0 28px 56px;
+      margin-top: auto;
+    }
+
+    .footer-inner {
+      border-top: 1px solid var(--ink-08);
+      padding-top: 32px;
+      max-width: 640px;
+      margin: 0 auto;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .footer-copy {
+      font-family: var(--mono);
+      font-size: 0.7rem;
+      color: var(--ink-40);
+      letter-spacing: 0.02em;
+    }
+
+    .footer-back {
+      font-family: var(--sans);
+      font-size: 0.88rem;
+      color: var(--ink-60);
+      text-decoration: none;
+      transition: color 0.2s ease;
+    }
+
+    .footer-back:hover { color: var(--rust); }
+
+    /* ── Responsive ────────────────────────────────────────── */
+    @media (max-width: 600px) {
+      main {
+        padding: 72px 20px 60px;
+      }
+
+      h1 {
+        font-size: 2.2rem;
+      }
+
+      nav {
+        padding: 22px 20px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Nav -->
+  <nav>
+    <a href="./index.html" class="nav-logo">
+      Special<span style="color:var(--rust)">Agent</span>
+    </a>
+  </nav>
+
+  <!-- Main -->
+  <main>
+
+    <!-- Hero icon -->
+    <div class="hero-icon fade-up">
+      <svg viewBox="0 0 80 80" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+        <!-- Shield outline -->
+        <path
+          d="M40 6L12 17v20c0 15.5 11.8 30 28 34 16.2-4 28-18.5 28-34V17L40 6z"
+          stroke="#b04a2e"
+          stroke-width="2"
+          stroke-linejoin="round"
+          fill="rgba(176,74,46,0.05)"
+        />
+        <!-- Checkmark -->
+        <path
+          d="M28 40l9 9 15-16"
+          stroke="#b04a2e"
+          stroke-width="2.5"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+        />
+      </svg>
+    </div>
+
+    <!-- Eyebrow -->
+    <p class="eyebrow fade-up fade-up-delay-1">Mission Accepted</p>
+
+    <!-- H1 -->
+    <h1 class="fade-up fade-up-delay-2">
+      Your Intelligence Brief<br><em>has been received.</em>
+    </h1>
+
+    <!-- Intro body -->
+    <div class="intro-body fade-up fade-up-delay-2">
+      <p>We've got everything we need. Our team will review your brief and reach out within 24 hours to confirm your call time.</p>
+      <p>We'll arrive prepared — with a draft agent config already written for your specific workflows.</p>
+    </div>
+
+    <hr class="divider fade-up fade-up-delay-3" />
+
+    <!-- Steps -->
+    <section class="steps-section fade-up fade-up-delay-3">
+      <p class="steps-eyebrow">What Happens Next</p>
+      <ol class="steps-list">
+        <li class="step">
+          <span class="step-number">01</span>
+          <div class="step-body">
+            <p class="step-title">We review your brief</p>
+            <p class="step-desc">Within 24 hours, a member of our team reads through your Intelligence Brief and starts drafting your agent's configuration files.</p>
+          </div>
+        </li>
+        <li class="step">
+          <span class="step-number">02</span>
+          <div class="step-body">
+            <p class="step-title">You get a confirmation</p>
+            <p class="step-desc">We'll reach out via email to confirm your call time and share a pre-read with what we've prepared for you.</p>
+          </div>
+        </li>
+        <li class="step">
+          <span class="step-number">03</span>
+          <div class="step-body">
+            <p class="step-title">We deploy your agent</p>
+            <p class="step-desc">The call is focused and fast. We calibrate, confirm, and deploy. Your Special Agent goes live within 72 hours.</p>
+          </div>
+        </li>
+      </ol>
+    </section>
+
+    <hr class="divider fade-up fade-up-delay-4" />
+
+    <!-- CTA -->
+    <section class="cta-section fade-up fade-up-delay-5">
+      <p class="cta-label">In the Meantime</p>
+      <h3>Have a question before the call?</h3>
+      <p class="cta-body">Email us directly and we'll respond within a few hours.</p>
+      <a href="mailto:team@alexazzi.com" class="btn-outline">Contact the Team</a>
+    </section>
+
+  </main>
+
+  <!-- Footer -->
+  <footer>
+    <div class="footer-inner">
+      <p class="footer-copy">Special Agent by ClawCop &middot; &copy; 2026</p>
+      <a href="./index.html" class="footer-back">← Back to main page</a>
+    </div>
+  </footer>
+
+</body>
+</html>

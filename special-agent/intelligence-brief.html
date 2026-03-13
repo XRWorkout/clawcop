@@ -1,0 +1,740 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Intelligence Brief — Special Agent by ClawCop</title>
+  <meta name="description" content="Complete your Intelligence Brief before your Special Agent onboarding call. Help us tailor your agent config before we speak.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;0,9..144,500;1,9..144,400&family=IBM+Plex+Mono:wght@400;500;600&family=Source+Sans+3:wght@400;500;600&display=swap" rel="stylesheet">
+  <style>
+    /* ─── Design Tokens ─── */
+    :root {
+      --cream:       #f6f3ed;
+      --ink:         #1a1714;
+      --ink-80:      #3d3830;
+      --ink-60:      #635c52;
+      --ink-40:      #908678;
+      --ink-08:      #e8e4de;
+      --cream-dark:  #ece7de;
+      --rust:        #b04a2e;
+      --rust-wash:   rgba(176,74,46,0.06);
+      --rust-border: rgba(176,74,46,0.18);
+      --serif:       'Fraunces', Georgia, serif;
+      --mono:        'IBM Plex Mono', monospace;
+      --sans:        'Source Sans 3', sans-serif;
+      --max:         720px;
+    }
+
+    /* ─── Reset ─── */
+    *, *::before, *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    /* ─── Base ─── */
+    html {
+      font-size: 17px;
+      scroll-behavior: smooth;
+    }
+
+    body {
+      background-color: var(--cream);
+      color: var(--ink);
+      font-family: var(--sans);
+      font-size: 1rem;
+      line-height: 1.7;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    a {
+      color: var(--rust);
+      text-decoration: none;
+    }
+
+    a:hover {
+      text-decoration: underline;
+    }
+
+    /* ─── Nav ─── */
+    .nav {
+      border-bottom: 1px solid var(--ink-08);
+      padding: 0 24px;
+    }
+
+    .nav-inner {
+      max-width: var(--max);
+      margin: 0 auto;
+      height: 60px;
+      display: flex;
+      align-items: center;
+    }
+
+    .nav-logo {
+      font-family: var(--mono);
+      font-size: 14px;
+      font-weight: 600;
+      color: var(--ink);
+      text-decoration: none;
+      letter-spacing: 0.01em;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      transition: opacity 0.15s ease;
+    }
+
+    .nav-logo:hover {
+      opacity: 0.7;
+      text-decoration: none;
+    }
+
+    .nav-logo .arrow {
+      color: var(--ink-40);
+      font-weight: 400;
+    }
+
+    /* ─── Page Header ─── */
+    .page-header {
+      padding: 64px 24px 56px;
+      text-align: center;
+    }
+
+    .page-header-inner {
+      max-width: 600px;
+      margin: 0 auto;
+    }
+
+    .eyebrow {
+      font-family: var(--mono);
+      font-size: 11px;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+      color: var(--rust);
+      margin-bottom: 16px;
+    }
+
+    .page-header h1 {
+      font-family: var(--serif);
+      font-size: 42px;
+      font-weight: 400;
+      line-height: 1.15;
+      color: var(--ink);
+      margin-bottom: 20px;
+    }
+
+    .page-header .subtext {
+      font-size: 19px;
+      color: var(--ink-60);
+      line-height: 1.6;
+      margin-bottom: 16px;
+    }
+
+    .progress-note {
+      font-family: var(--mono);
+      font-size: 12px;
+      color: var(--ink-40);
+    }
+
+    /* ─── Form Wrapper ─── */
+    .form-wrap {
+      max-width: 640px;
+      margin: 0 auto;
+      padding: 0 24px 80px;
+    }
+
+    /* ─── Form Groups / Sections ─── */
+    .form-section {
+      padding: 40px 0;
+      border-top: 1px solid var(--ink-08);
+    }
+
+    .form-section:first-child {
+      border-top: none;
+      padding-top: 0;
+    }
+
+    .section-eyebrow {
+      font-family: var(--mono);
+      font-size: 11px;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+      color: var(--rust);
+      margin-bottom: 28px;
+    }
+
+    /* ─── Field Groups ─── */
+    .field-group {
+      margin-bottom: 24px;
+    }
+
+    .field-group:last-child {
+      margin-bottom: 0;
+    }
+
+    /* ─── Labels ─── */
+    label {
+      display: block;
+      font-family: var(--mono);
+      font-size: 11px;
+      font-weight: 500;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      color: var(--ink-60);
+      margin-bottom: 6px;
+    }
+
+    label .optional {
+      font-weight: 400;
+      color: var(--ink-40);
+      text-transform: none;
+      letter-spacing: 0;
+      font-size: 10px;
+      margin-left: 4px;
+    }
+
+    /* ─── Inputs, Selects, Textareas ─── */
+    input[type="text"],
+    input[type="email"],
+    input[type="date"],
+    select,
+    textarea {
+      display: block;
+      width: 100%;
+      background: #ffffff;
+      border: 1px solid var(--ink-08);
+      border-radius: 8px;
+      padding: 12px 16px;
+      font-family: var(--sans);
+      font-size: 16px;
+      color: var(--ink);
+      line-height: 1.5;
+      transition: border-color 0.15s ease, box-shadow 0.15s ease;
+      appearance: none;
+      -webkit-appearance: none;
+    }
+
+    input[type="text"]:focus,
+    input[type="email"]:focus,
+    input[type="date"]:focus,
+    select:focus,
+    textarea:focus {
+      border-color: var(--rust);
+      outline: none;
+      box-shadow: 0 0 0 3px var(--rust-wash);
+    }
+
+    input::placeholder,
+    textarea::placeholder {
+      color: var(--ink-40);
+    }
+
+    textarea {
+      resize: vertical;
+      min-height: 80px;
+    }
+
+    /* ─── Select Arrow ─── */
+    .select-wrap {
+      position: relative;
+    }
+
+    .select-wrap::after {
+      content: '';
+      position: absolute;
+      right: 16px;
+      top: 50%;
+      transform: translateY(-50%);
+      width: 0;
+      height: 0;
+      border-left: 5px solid transparent;
+      border-right: 5px solid transparent;
+      border-top: 6px solid var(--ink-40);
+      pointer-events: none;
+    }
+
+    .select-wrap select {
+      padding-right: 40px;
+      cursor: pointer;
+    }
+
+    /* ─── Checkboxes ─── */
+    .checkbox-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 10px;
+    }
+
+    .checkbox-item {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      background: #ffffff;
+      border: 1px solid var(--ink-08);
+      border-radius: 8px;
+      padding: 10px 14px;
+      cursor: pointer;
+      transition: border-color 0.15s ease, background 0.15s ease;
+    }
+
+    .checkbox-item:hover {
+      border-color: var(--rust-border);
+      background: var(--rust-wash);
+    }
+
+    .checkbox-item input[type="checkbox"] {
+      width: 16px;
+      height: 16px;
+      min-width: 16px;
+      accent-color: var(--rust);
+      cursor: pointer;
+    }
+
+    .checkbox-item label {
+      font-family: var(--sans);
+      font-size: 14px;
+      font-weight: 500;
+      text-transform: none;
+      letter-spacing: 0;
+      color: var(--ink-80);
+      margin-bottom: 0;
+      cursor: pointer;
+    }
+
+    /* ─── Submit Section ─── */
+    .submit-section {
+      padding-top: 40px;
+      border-top: 1px solid var(--ink-08);
+    }
+
+    .submit-disclaimer {
+      font-family: var(--mono);
+      font-size: 11px;
+      color: var(--ink-40);
+      text-align: center;
+      margin-bottom: 16px;
+      line-height: 1.6;
+    }
+
+    .btn-dark {
+      display: block;
+      width: 100%;
+      background: var(--ink);
+      color: var(--cream);
+      font-family: var(--mono);
+      font-size: 13px;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      padding: 16px 28px;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      text-align: center;
+      transition: background 0.15s ease, transform 0.1s ease;
+      line-height: 1.4;
+    }
+
+    .btn-dark:hover {
+      background: var(--ink-80);
+    }
+
+    .btn-dark:active {
+      transform: scale(0.99);
+    }
+
+    /* ─── After Submit Note ─── */
+    .after-submit-note {
+      max-width: 640px;
+      margin: 32px auto 0;
+      padding: 0 24px;
+      text-align: center;
+      font-size: 14px;
+      color: var(--ink-40);
+      line-height: 1.6;
+    }
+
+    /* ─── Footer ─── */
+    .footer {
+      margin-top: 80px;
+      padding: 32px 24px;
+      border-top: 1px solid var(--ink-08);
+      text-align: center;
+    }
+
+    .footer-inner {
+      max-width: var(--max);
+      margin: 0 auto;
+    }
+
+    .footer-copy {
+      font-family: var(--mono);
+      font-size: 12px;
+      color: var(--ink-40);
+      margin-bottom: 8px;
+    }
+
+    .footer-back {
+      font-family: var(--mono);
+      font-size: 12px;
+      color: var(--ink-60);
+      text-decoration: none;
+    }
+
+    .footer-back:hover {
+      color: var(--rust);
+      text-decoration: none;
+    }
+
+    /* ─── Responsive ─── */
+    @media (max-width: 768px) {
+      .page-header {
+        padding: 40px 20px 40px;
+      }
+
+      .page-header h1 {
+        font-size: 32px;
+      }
+
+      .page-header .subtext {
+        font-size: 17px;
+      }
+
+      .form-wrap {
+        padding: 0 20px 60px;
+      }
+
+      .checkbox-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .btn-dark {
+        font-size: 12px;
+        padding: 14px 20px;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .page-header h1 {
+        font-size: 28px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ─── Nav ─── -->
+  <nav class="nav">
+    <div class="nav-inner">
+      <a href="./index.html" class="nav-logo">
+        <span class="arrow">←</span>
+        Special<span style="color:var(--rust)">Agent</span>
+      </a>
+    </div>
+  </nav>
+
+  <!-- ─── Page Header ─── -->
+  <header class="page-header">
+    <div class="page-header-inner">
+      <p class="eyebrow">Mission Briefing</p>
+      <h1>Your Intelligence Brief</h1>
+      <p class="subtext">This 10-minute form helps us understand your world before we speak. We'll arrive at the call with a draft agent config already written — tailored to you.</p>
+      <p class="progress-note">Estimated time: 10–15 minutes · All fields required unless marked optional</p>
+    </div>
+  </header>
+
+  <!-- ─── Form ─── -->
+  <main>
+    <div class="form-wrap">
+      <form action="https://formsubmit.co/team@alexazzi.com" method="POST">
+
+        <!-- Hidden FormSubmit fields -->
+        <input type="hidden" name="_subject" value="New Intelligence Brief — Special Agent">
+        <input type="hidden" name="_next" value="https://iridescent-selkie-28459c.netlify.app/thank-you.html">
+        <input type="hidden" name="_template" value="table">
+        <input type="hidden" name="_captcha" value="false">
+
+        <!-- ─── Section 01: About You ─── -->
+        <section class="form-section">
+          <p class="section-eyebrow">01 / About You</p>
+
+          <div class="field-group">
+            <label for="full_name">Full Name</label>
+            <input
+              type="text"
+              id="full_name"
+              name="Full Name"
+              placeholder="Jane Smith"
+              required
+            >
+          </div>
+
+          <div class="field-group">
+            <label for="email">Email Address</label>
+            <input
+              type="email"
+              id="email"
+              name="Email Address"
+              placeholder="jane@company.com"
+              required
+            >
+          </div>
+
+          <div class="field-group">
+            <label for="company">Company / Business Name</label>
+            <input
+              type="text"
+              id="company"
+              name="Company / Business Name"
+              placeholder="Acme Corp"
+              required
+            >
+          </div>
+
+          <div class="field-group">
+            <label for="role">Your Role / Title</label>
+            <input
+              type="text"
+              id="role"
+              name="Your Role / Title"
+              placeholder="e.g. Founder, COO, Agency Owner"
+              required
+            >
+          </div>
+
+          <div class="field-group">
+            <label for="comm_platform">Primary Communication Platform</label>
+            <div class="select-wrap">
+              <select id="comm_platform" name="Primary Communication Platform" required>
+                <option value="" disabled selected>Select a platform…</option>
+                <option value="Slack">Slack</option>
+                <option value="Telegram">Telegram</option>
+                <option value="WhatsApp">WhatsApp</option>
+                <option value="Discord">Discord</option>
+                <option value="Email">Email</option>
+              </select>
+            </div>
+          </div>
+        </section>
+
+        <!-- ─── Section 02: Your World ─── -->
+        <section class="form-section">
+          <p class="section-eyebrow">02 / Your World</p>
+
+          <div class="field-group">
+            <label for="business_description">Describe your business in 2–3 sentences</label>
+            <textarea
+              id="business_description"
+              name="Describe your business in 2–3 sentences"
+              rows="4"
+              placeholder="What do you do, who do you serve, how big is your team?"
+              required
+            ></textarea>
+          </div>
+
+          <div class="field-group">
+            <label for="typical_week">What does a typical week look like for you?</label>
+            <textarea
+              id="typical_week"
+              name="What does a typical week look like for you?"
+              rows="4"
+              placeholder="Walk us through your main recurring tasks, meetings, and pain points"
+              required
+            ></textarea>
+          </div>
+
+          <div class="field-group">
+            <label for="falling_through_cracks">What's the #1 thing that keeps falling through the cracks?</label>
+            <textarea
+              id="falling_through_cracks"
+              name="What's the #1 thing that keeps falling through the cracks?"
+              rows="3"
+              placeholder="Be specific — this often becomes your agent's first mission"
+              required
+            ></textarea>
+          </div>
+        </section>
+
+        <!-- ─── Section 03: Your Agent ─── -->
+        <section class="form-section">
+          <p class="section-eyebrow">03 / Your Agent</p>
+
+          <div class="field-group">
+            <label for="agent_name">What should your agent's name be?</label>
+            <input
+              type="text"
+              id="agent_name"
+              name="What should your agent's name be?"
+              placeholder="e.g. Meridian, Atlas, Nova — or leave blank and we'll suggest one"
+            >
+          </div>
+
+          <div class="field-group">
+            <label>What tools do you want your agent connected to?</label>
+            <div class="checkbox-grid">
+              <label class="checkbox-item">
+                <input type="checkbox" name="Tools to connect" value="Gmail / Google Workspace">
+                Gmail / Google Workspace
+              </label>
+              <label class="checkbox-item">
+                <input type="checkbox" name="Tools to connect" value="Slack">
+                Slack
+              </label>
+              <label class="checkbox-item">
+                <input type="checkbox" name="Tools to connect" value="Telegram">
+                Telegram
+              </label>
+              <label class="checkbox-item">
+                <input type="checkbox" name="Tools to connect" value="WhatsApp">
+                WhatsApp
+              </label>
+              <label class="checkbox-item">
+                <input type="checkbox" name="Tools to connect" value="Notion">
+                Notion
+              </label>
+              <label class="checkbox-item">
+                <input type="checkbox" name="Tools to connect" value="Airtable">
+                Airtable
+              </label>
+              <label class="checkbox-item">
+                <input type="checkbox" name="Tools to connect" value="Stripe">
+                Stripe
+              </label>
+              <label class="checkbox-item">
+                <input type="checkbox" name="Tools to connect" value="Calendar (Google/Outlook)">
+                Calendar (Google/Outlook)
+              </label>
+              <label class="checkbox-item">
+                <input type="checkbox" name="Tools to connect" value="Web Research">
+                Web Research
+              </label>
+              <label class="checkbox-item">
+                <input type="checkbox" name="Tools to connect" value="Custom">
+                Custom (specify below)
+              </label>
+            </div>
+          </div>
+
+          <div class="field-group">
+            <label for="tools_custom">If "Custom", please specify <span class="optional">— optional</span></label>
+            <input
+              type="text"
+              id="tools_custom"
+              name="Custom tools (please specify)"
+              placeholder="e.g. HubSpot, Salesforce, Linear, Zapier…"
+            >
+          </div>
+
+          <div class="field-group">
+            <label for="agent_tone">What tone should your agent use?</label>
+            <div class="select-wrap">
+              <select id="agent_tone" name="What tone should your agent use?" required>
+                <option value="" disabled selected>Select a tone…</option>
+                <option value="Professional &amp; concise">Professional &amp; concise</option>
+                <option value="Warm &amp; conversational">Warm &amp; conversational</option>
+                <option value="Direct &amp; no-nonsense">Direct &amp; no-nonsense</option>
+                <option value="Formal &amp; structured">Formal &amp; structured</option>
+              </select>
+            </div>
+          </div>
+
+          <div class="field-group">
+            <label for="agent_never">What should your agent NEVER do or say? <span class="optional">— optional</span></label>
+            <textarea
+              id="agent_never"
+              name="What should your agent NEVER do or say?"
+              rows="3"
+              placeholder="e.g. Never promise timelines, never mention competitors, never share pricing without approval"
+            ></textarea>
+          </div>
+        </section>
+
+        <!-- ─── Section 04: Goals & Timeline ─── -->
+        <section class="form-section">
+          <p class="section-eyebrow">04 / Goals &amp; Timeline</p>
+
+          <div class="field-group">
+            <label for="primary_outcome">What's the #1 outcome you want from your Special Agent?</label>
+            <textarea
+              id="primary_outcome"
+              name="What's the #1 outcome you want from your Special Agent?"
+              rows="3"
+              placeholder="e.g. Handle all client follow-ups, run my weekly reporting, manage my inbox"
+              required
+            ></textarea>
+          </div>
+
+          <div class="field-group">
+            <label for="hours_automated">How many hours per week do you spend on tasks you'd want automated?</label>
+            <div class="select-wrap">
+              <select id="hours_automated" name="Hours per week spent on tasks to automate" required>
+                <option value="" disabled selected>Select a range…</option>
+                <option value="Less than 5 hrs">Less than 5 hrs</option>
+                <option value="5–10 hrs">5–10 hrs</option>
+                <option value="10–20 hrs">10–20 hrs</option>
+                <option value="20+ hrs">20+ hrs</option>
+              </select>
+            </div>
+          </div>
+
+          <div class="field-group">
+            <label for="tier">Which tier are you considering?</label>
+            <div class="select-wrap">
+              <select id="tier" name="Which tier are you considering?" required>
+                <option value="" disabled selected>Select a tier…</option>
+                <option value="Field Agent (Starting at $500 + $150/mo)">Field Agent — Starting at $500 + $150/mo</option>
+                <option value="Special Agent (Starting at $2,500 + $499/mo)">Special Agent — Starting at $2,500 + $499/mo</option>
+                <option value="Sovereign Agent ($10,000+ / custom)">Sovereign Agent — $10,000+ / custom</option>
+                <option value="Not sure yet">Not sure yet</option>
+              </select>
+            </div>
+          </div>
+
+          <div class="field-group">
+            <label for="go_live_date">Preferred go-live date <span class="optional">— optional</span></label>
+            <input
+              type="date"
+              id="go_live_date"
+              name="Preferred go-live date"
+            >
+          </div>
+
+          <div class="field-group">
+            <label for="anything_else">Anything else we should know before the call? <span class="optional">— optional</span></label>
+            <textarea
+              id="anything_else"
+              name="Anything else we should know before the call?"
+              rows="4"
+              placeholder="Budget constraints, internal blockers, previous attempts at automation, specific integrations…"
+            ></textarea>
+          </div>
+        </section>
+
+        <!-- ─── Submit ─── -->
+        <div class="submit-section">
+          <p class="submit-disclaimer">By submitting this brief, you agree to be contacted by the Special Agent team. No spam. Ever.</p>
+          <button type="submit" class="btn-dark">Submit My Intelligence Brief →</button>
+        </div>
+
+      </form>
+    </div>
+
+    <!-- After Submit Note -->
+    <p class="after-submit-note">
+      After submitting, you'll hear from us within 24 hours to confirm your call time. We'll have your draft agent config ready before we speak.
+    </p>
+  </main>
+
+  <!-- ─── Footer ─── -->
+  <footer class="footer">
+    <div class="footer-inner">
+      <p class="footer-copy">Special Agent by ClawCop · © 2026</p>
+      <a href="./index.html" class="footer-back">← Back to main page</a>
+    </div>
+  </footer>
+
+</body>
+</html>
